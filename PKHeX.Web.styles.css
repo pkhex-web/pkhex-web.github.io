@@ -1,0 +1,19 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+.logo[b-3ur60omrtx] {
+    color: white;
+    margin-top: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.nav-text > a[b-3ur60omrtx] {
+    color: white;
+}
+
+.nav-text > a:hover[b-3ur60omrtx] {
+    color: cornflowerblue;
+}
+
+.layout-header[b-3ur60omrtx] {
+    color: white;
+}
