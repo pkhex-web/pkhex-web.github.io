@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PKHeX.Web",
   "resources": {
-    "hash": "sha256-1aP6SuYJ/yO8scv0zwa98xGJUULAXp1CB6WKYzcV0Kg=",
+    "hash": "sha256-Xc4kPfkM+TYl20mn4jYXjLmdLHIKk0onSJps9B+c/mY=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.suuomc2hr0.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
     },
@@ -20,7 +20,7 @@
       "AntDesign.wasm": "sha256-xWEJ4hS0LTq7mQbB6++b/NEx48toLmGIXow260Umwtg=",
       "Microsoft.AspNetCore.Components.DataAnnotations.Validation.wasm": "sha256-Mpd98aRLb9cK/TLwAqYub55BwBvzDAyJs18h1O7jIqk=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-VcSPyZnUo1CeY01UjqWccNNwOWndE/hmFks/xtwdb24=",
-      "Microsoft.AspNetCore.Components.wasm": "sha256-QLSkWT6gPXRLYGlHirjj6zM3wmg9x5HwUqL2s2gdkqE=",
+      "Microsoft.AspNetCore.Components.wasm": "sha256-zC6s+2wXtQ4VrsTXPRA+udMGaVYWJvnBX4J6TuDs/BE=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-dxihBhi17dvf9shd8Qiuk+IV99YnAw438D2mU1CZLI8=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-rJhGMSgNJj2ZfvJpl0usyPPPnzHdgXOXIOzPT9/lgb4=",
       "Microsoft.Extensions.Configuration.Abstractions.wasm": "sha256-87sn2TYqgdZ95sXmavjKEzoEfMgHnYQ9LOvnMX+aZcI=",
@@ -37,8 +37,8 @@
       "netstandard.wasm": "sha256-pRwqsM6n/B2xSixJMijQsRfJaXDleqfXtHmS7ClC9tU=",
       "OneOf.wasm": "sha256-JTfy2tP0VwsuWE+l5+ZqIp4o0waOKFqXnQRfbZMdTPc=",
       "PKHeX.Core.wasm": "sha256-6VcnyLEXqb9s/cXUB8O3P3f/lXYd47En0Hvs9ZN3gQo=",
-      "PKHeX.Facade.wasm": "sha256-/KCqVU33gM61tTsVyXFTB6No/4U2OB2Kjhu+b1jf2fs=",
-      "PKHeX.Web.wasm": "sha256-iYZjhk0Ck5wZZZ3BuzFn3phEqQqlgLavmsR7hoMWPUE=",
+      "PKHeX.Facade.wasm": "sha256-SsYameoBvEscMJRU2sYP1IWdl4ZZ/Q5pM5IJXhbfpW8=",
+      "PKHeX.Web.wasm": "sha256-Qp4Qjwkp9G/5q4EUgyNxi6NqJ7Chhh4p3joFajBB/XM=",
       "System.Collections.Concurrent.wasm": "sha256-PBtn6Ft0HlDR041d9mGxdw2HAqRa6hVXFVvKxP1h3RU=",
       "System.Collections.Immutable.wasm": "sha256-rQ0zUnzbyxtxmppTPNL0PxfBdnx+qDraLJ27e7UOPIc=",
       "System.Collections.NonGeneric.wasm": "sha256-9YIK3dkug2EaxqM4pEMNSCYczWn3769wXZkEuKH/QFo=",
