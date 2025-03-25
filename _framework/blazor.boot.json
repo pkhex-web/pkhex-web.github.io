@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PKHeX.Web",
   "resources": {
-    "hash": "sha256-vRB2VijpYan6PfdG+UYT2TIvbSXPpSLHJ64FznKCCzQ=",
+    "hash": "sha256-U6kfmcYlV0GrsBT9hq1XJwy1JY/00/25tKIiKtxbxow=",
     "fingerprinting": {
       "AntDesign.Charts.9ht7xexfkq.wasm": "AntDesign.Charts.wasm",
       "AntDesign.usp150mwfv.wasm": "AntDesign.wasm",
@@ -33,11 +33,11 @@
       "Microsoft.JSInterop.WebAssembly.p386u0jty9.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
       "netstandard.6ncjpi7x8i.wasm": "netstandard.wasm",
       "OneOf.yq61etxwqn.wasm": "OneOf.wasm",
-      "PKHeX.Core.AutoMod.ur8f9ev1wt.wasm": "PKHeX.Core.AutoMod.wasm",
-      "PKHeX.Core.q1lcxszmfb.wasm": "PKHeX.Core.wasm",
-      "PKHeX.Facade.baim07tjaz.wasm": "PKHeX.Facade.wasm",
-      "PKHeX.Web.Plugins.qaovvkwf2t.wasm": "PKHeX.Web.Plugins.wasm",
-      "PKHeX.Web.y8mabp759d.wasm": "PKHeX.Web.wasm",
+      "PKHeX.Core.AutoMod.buxd1u1sfp.wasm": "PKHeX.Core.AutoMod.wasm",
+      "PKHeX.Core.haubwik2f5.wasm": "PKHeX.Core.wasm",
+      "PKHeX.Facade.ws0970d99h.wasm": "PKHeX.Facade.wasm",
+      "PKHeX.Web.Plugins.kimt2hjuxv.wasm": "PKHeX.Web.Plugins.wasm",
+      "PKHeX.Web.7ixgz2bcm1.wasm": "PKHeX.Web.wasm",
       "Sentry.AspNetCore.Blazor.WebAssembly.9lfnhdqdp6.wasm": "Sentry.AspNetCore.Blazor.WebAssembly.wasm",
       "Sentry.Extensions.Logging.dms7es2r2f.wasm": "Sentry.Extensions.Logging.wasm",
       "Sentry.20627cb5kb.wasm": "Sentry.wasm",
@@ -74,7 +74,7 @@
       "System.Net.WebClient.kpnzc7f3ct.wasm": "System.Net.WebClient.wasm",
       "System.Numerics.Vectors.pvfa7ujqa1.wasm": "System.Numerics.Vectors.wasm",
       "System.ObjectModel.oxkrqjkhzn.wasm": "System.ObjectModel.wasm",
-      "System.Private.CoreLib.ue8oxz40dn.wasm": "System.Private.CoreLib.wasm",
+      "System.Private.CoreLib.0jngir98br.wasm": "System.Private.CoreLib.wasm",
       "System.Private.Uri.6oiksu6pwk.wasm": "System.Private.Uri.wasm",
       "System.Private.Xml.Linq.ip7t7umkr2.wasm": "System.Private.Xml.Linq.wasm",
       "System.Private.Xml.7w7ev9b98h.wasm": "System.Private.Xml.wasm",
@@ -126,7 +126,7 @@
       "icudt_no_CJK.lfu7j35m59.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "coreAssembly": {
-      "System.Private.CoreLib.ue8oxz40dn.wasm": "sha256-lq2otAiFgBNYyyEM66V3v7kcwmeEXxcA43bz9PEaK18=",
+      "System.Private.CoreLib.0jngir98br.wasm": "sha256-HAkpKZRgg70HgWLxjIbMXR/7HFcHaLKgXPeS2MUQV6w=",
       "System.Runtime.InteropServices.JavaScript.0tgicm7vjk.wasm": "sha256-bAbPaONHne7R1hItHoY8/SYWlDb84JZQ1cxd1Y+tJn0="
     },
     "assembly": {
@@ -160,11 +160,11 @@
       "Microsoft.JSInterop.WebAssembly.p386u0jty9.wasm": "sha256-hbzWuXrlepIqY/y+nQ2ZAFer2/njy1dc+Y4LUaAaL5E=",
       "netstandard.6ncjpi7x8i.wasm": "sha256-PkhiM8vNz/i1feJ3JaCrVVovznI/BPTMhu4B8LZalEA=",
       "OneOf.yq61etxwqn.wasm": "sha256-akqbZuRazMph7GZNcPHLIOp1mgnkjdaWZMM9Up4LPfE=",
-      "PKHeX.Core.AutoMod.ur8f9ev1wt.wasm": "sha256-KqvL/EZ0+DkvzQ3vsAQcSwkqtJ/zGB/15+PUpz8gg4Y=",
-      "PKHeX.Core.q1lcxszmfb.wasm": "sha256-jlZUyIxpDTpiUYDhrwo5YD9klSSESEr8UPv/Q8FAWP4=",
-      "PKHeX.Facade.baim07tjaz.wasm": "sha256-7e3b5eQ4QgnyfTwHIpHl+Fw28ZZ0qEEGFAczQP0Kgs8=",
-      "PKHeX.Web.Plugins.qaovvkwf2t.wasm": "sha256-PmQMpJrhQ+WoXHuPDJSCagXs0LfyOq8eeM7Pmn18WBQ=",
-      "PKHeX.Web.y8mabp759d.wasm": "sha256-3tH2J+qLVzLType5YmBhg+3jAlFsdfsXd0k7Or5XV1c=",
+      "PKHeX.Core.AutoMod.buxd1u1sfp.wasm": "sha256-bSq8qkM+yR2aVrtU9xl5ECDDDFuLRmZMBcnPbV7w1B8=",
+      "PKHeX.Core.haubwik2f5.wasm": "sha256-5ym3kVPvTtHRtBQ44oliIyA5nGTSMbzbc95R7umzKBs=",
+      "PKHeX.Facade.ws0970d99h.wasm": "sha256-sByVUY6/nqaEXPntW/S+Oxx4NbyjwEgr/uj8yEIJvLo=",
+      "PKHeX.Web.Plugins.kimt2hjuxv.wasm": "sha256-xBLcHJJUbUncLY0duoprasI07vKAbV3A8WPL5ywzNzc=",
+      "PKHeX.Web.7ixgz2bcm1.wasm": "sha256-nwg9Bf3rLoJ8vqloFYkTDN0I/SDZm3PHfRMGoYdQKuc=",
       "Sentry.AspNetCore.Blazor.WebAssembly.9lfnhdqdp6.wasm": "sha256-rZOgYsjQI7Jqx2LX/T/ljhx4X3SKFy4tRD+ej3+FeWw=",
       "Sentry.Extensions.Logging.dms7es2r2f.wasm": "sha256-W9U8v1uLN8373YJHPN94g/9WeNd32vK9vi2n2RZIT4I=",
       "Sentry.20627cb5kb.wasm": "sha256-4pGBTSgG6/5v2CpvYn5C9f4iG38d0TVX7xtgQrupbrQ=",
