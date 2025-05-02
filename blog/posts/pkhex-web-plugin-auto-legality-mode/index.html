@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>How to use Auto-Legality Mode (ALM) in PJHeX.Wev | PKHeX.Web - Blog</title>
+
+    <link rel="canonical" href="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-auto-legality-mode/">
+
+    <meta name="description" content="">
+    <meta property="og:title" content="How to use Auto-Legality Mode (ALM) in PJHeX.Wev">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-auto-legality-mode/">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+
+    <link href="https://pkhex-web.github.io/_content/AntDesign/css/ant-design-blazor.dark.css" rel="stylesheet">
+    <link href="/blog/css/style.css" rel="stylesheet">
+</head>
+<body>
+<section class="ant-layout ant-layout-has-sider" style="min-height: 100vh;">
+    <aside class="ant-layout-sider ant-layout-sider-dark ant-layout-sider-has-trigger ant-layout-sider-collapsed"
+           style="flex: 0 0 64px; max-width: 64px; min-width: 64px; width: 64px; overflow:initial; ">
+
+        <div class="ant-layout-sider-children">
+            <div class="logo">
+                <a class="logo-link" href="/">PKHeX.Web</a>
+            </div>
+        </div>
+    </aside>
+
+    <section class="ant-layout">
+        <header class="ant-layout-header ant-header"
+                style="display: flex; justify-items: center; align-items: center; width: 100%;">
+        </header>
+        <main class="ant-layout-content blog-main-layout" style=" margin: 24px 16px 0;">
+            <div class="site-layout-background blog-main-content" style="padding: 24px; min-height: 360px">
+                
+<nav style="padding-bottom: 16px;">
+    <a href="/blog/">Home</a>
+    
+    <span> / </span>
+    <a href="/blog/posts/pkhex-web-plugin-auto-legality-mode/">how_to_alm</a>
+    
+</nav>
+
+<article>
+    <h1>How to use Auto-Legality Mode (ALM) in PJHeX.Wev</h1>
+    <p><small>September 02, 2024</small></p>
+    <p>The Auto-Legality Mode (ALM) plug-in for PKHeX.Web serves as a proxy for applying the <a href="https://github.com/santacrab2/PKHeX-Plugins">auto-legality mode logic</a> originally maintained by <a href="https://github.com/santacrab2">@santacrab2</a> for the desktop version of PKHeX.</p>
+<p>This post details the configuration options and features available within this plug-in.</p>
+<h2>Configurations</h2>
+<p>These settings control the core behavior of the ALM plug-in.</p>
+<h3>Timeout (seconds)</h3>
+<ul>
+<li><strong>Default:</strong> <code>2 seconds</code></li>
+</ul>
+<p>Auto-legality mode attempts to find a valid set of parameters to make a Pokémon legal. This process can sometimes take a noticeable amount of time. This setting establishes the maximum number of seconds the plug-in will spend trying to legalize a Pokémon during a single attempt. If the threshold is reached before a legal version is found, the execution stops, and no changes are applied.</p>
+<h3>Force lvl 100 from 50</h3>
+<ul>
+<li><strong>Default:</strong> <code>disabled</code></li>
+</ul>
+<p>When enabled, this option assumes that any Pokémon encountered at level 50 is intended to be a level 100 competitive Pokémon. If you edit a Pokémon that is currently level 50, the plug-in will automatically change its level to 100 before applying legality checks.</p>
+<h2>Features</h2>
+<p>These features determine <em>when</em> the auto-legality logic is triggered. You can enable or disable them individually based on your workflow.</p>
+<h3>Try to make your pokemon legal on every change.</h3>
+<ul>
+<li><strong>Default:</strong> <code>disabled</code></li>
+</ul>
+<p>If enabled, the auto-legality process will be triggered automatically every time you modify any detail (like moves, IVs, EVs, ability, etc.) while editing a Pokémon in the interface. Be mindful that this can introduce slight delays during editing due to the processing time.</p>
+<h3>Adds a button to legalize a pokemon when editing it.</h3>
+<ul>
+<li><strong>Default:</strong> <code>enabled</code></li>
+</ul>
+<p>This feature adds a dedicated &quot;Make Legal&quot; button to the Pokémon editing interface. The auto-legality logic will only run when you explicitly click this button.</p>
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/090e68b8-83c1-4520-80ee-c65a106291be">
+<p>Upon clicking the button, you should see a confirmation pop-up indicating whether the process was successful or timed out.</p>
+<img width="382" alt="image" src="https://github.com/user-attachments/assets/f234567b-aabf-4eb5-9713-590fce01b378">
+<h3>Try to make your pokemon legal whenever a pokemon is saved</h3>
+<ul>
+<li><strong>Default:</strong> <code>disabled</code></li>
+</ul>
+<p>When this feature is enabled, the plug-in will automatically attempt to apply auto-legality just before the Pokémon data is saved (i.e., when you click the &quot;Save&quot; button in the editor).</p>
+
+</article>
+
+
+<hr style="margin-bottom: 32px; margin-top: 16px" />
+<h2>Tags</h2>
+
+<a href="/blog/tags/pkhex">
+    <span class="ant-tag ant-tag-default">
+        pkhex
+    </span>
+</a>
+
+<a href="/blog/tags/tutorial">
+    <span class="ant-tag ant-tag-default">
+        tutorial
+    </span>
+</a>
+
+<a href="/blog/tags/plugins">
+    <span class="ant-tag ant-tag-default">
+        plugins
+    </span>
+</a>
+
+<a href="/blog/tags/alm">
+    <span class="ant-tag ant-tag-default">
+        alm
+    </span>
+</a>
+
+<a href="/blog/tags/auto-legality">
+    <span class="ant-tag ant-tag-default">
+        auto-legality
+    </span>
+</a>
+
+
+            </div>
+        </main>
+
+        <footer class="ant-layout-footer" style="text-align: center;"
+        >
+            <p>PKHeX.Web - edit pokemon save files.
+            </p>
+            <p>
+                Issues or feedback on <a href="https://github.com/arleypadua/PKHeX.Everywhere"
+                                         target="_blank">GitHub</a></p>
+
+            <div class="ant-space ant-space-horizontal ant-space-align-start" style=" flex-wrap: wrap;">
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical">
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/terms-of-use">Terms of Use</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/credits">Credits</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item">
+                    <a href="/release-notes?since=2025-05-01">Release Notes</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </section>
+    
+</section>
+
+</body>
+</html>
