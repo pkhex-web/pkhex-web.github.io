@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>How to use Nuzlocking plugin | PKHeX.Web - Blog</title>
+
+    <link rel="canonical" href="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-nuzlocke-helpers/">
+
+    <meta name="description" content="">
+    <meta property="og:title" content="How to use Nuzlocking plugin">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-nuzlocke-helpers/">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+
+    <link href="https://pkhex-web.github.io/_content/AntDesign/css/ant-design-blazor.dark.css" rel="stylesheet">
+    <link href="/blog/css/style.css" rel="stylesheet">
+</head>
+<body>
+<section class="ant-layout ant-layout-has-sider" style="min-height: 100vh;">
+    <aside class="ant-layout-sider ant-layout-sider-dark ant-layout-sider-has-trigger ant-layout-sider-collapsed"
+           style="flex: 0 0 64px; max-width: 64px; min-width: 64px; width: 64px; overflow:initial; ">
+
+        <div class="ant-layout-sider-children">
+            <div class="logo">
+                <a class="logo-link" href="/">PKHeX.Web</a>
+            </div>
+        </div>
+    </aside>
+
+    <section class="ant-layout">
+        <header class="ant-layout-header ant-header"
+                style="display: flex; justify-items: center; align-items: center; width: 100%;">
+        </header>
+        <main class="ant-layout-content blog-main-layout" style=" margin: 24px 16px 0;">
+            <div class="site-layout-background blog-main-content" style="padding: 24px; min-height: 360px">
+                
+<nav style="padding-bottom: 16px;">
+    <a href="/blog/">Home</a>
+    
+    <span> / </span>
+    <a href="/blog/posts/pkhex-web-plugin-nuzlocke-helpers/">how_to_nuzlocking_plugin</a>
+    
+</nav>
+
+<article>
+    <h1>How to use Nuzlocking plugin</h1>
+    <p><small>September 02, 2024</small></p>
+    <p>PKHeX.Web includes a plug-in offering a couple of helper features specifically designed for players undertaking Nuzlocke challenges.</p>
+<p>This post outlines the available configurations and features within the Nuzlocke Helpers plug-in.</p>
+<h2>Configurations</h2>
+<p>These settings adjust how the &quot;Edging&quot; feature behaves.</p>
+<h3>AmountOfExperienceToEdge</h3>
+<p>This defines the specific amount of experience points that will be subtracted from a level threshold when using the &quot;Edge&quot; feature. It determines how close to leveling up the Pokémon will be placed.</p>
+<h3>EdgeOnPreviousLevel</h3>
+<p>This toggle controls the target level threshold for the &quot;Edge&quot; feature.</p>
+<ul>
+<li>When <code>enabled</code>, edging will set the Pokémon's experience just below the threshold required to reach its <em>current</em> level (effectively putting it at the very end of the <em>previous</em> level). It subtracts <code>AmountOfExperienceToEdge</code> from the experience required to reach the current level.</li>
+<li>When <code>disabled</code>, edging will set the Pokémon's experience just below the threshold required to reach the <em>next</em> level. It subtracts <code>AmountOfExperienceToEdge</code> from the experience required to gain the next level.</li>
+</ul>
+<h2>Features</h2>
+<p>These are the specific actions provided by the plug-in, which can be toggled on or off.</p>
+<h3>Will edge a pokemon to the current level</h3>
+<ul>
+<li><strong>Default:</strong> <code>enabled</code></li>
+</ul>
+<p>Adds a button to the Pokémon editing interface allowing you to &quot;edge&quot; a Pokémon – setting its experience just shy of a level-up. The exact behavior depends on the <code>AmountOfExperienceToEdge</code> and <code>EdgeOnPreviousLevel</code> configurations described above.</p>
+<p><strong>Example:</strong></p>
+<p>If a Pokémon is level 10, <code>EdgeOnPreviousLevel</code> is <code>enabled</code>, and you click the <code>Edge</code> button, the Pokémon's experience will be set to the maximum value for level 9, minus the <code>AmountOfExperienceToEdge</code> value. It will be very close to reaching level 10.</p>
+<img width="232" alt="image" src="https://github.com/user-attachments/assets/4213a41d-a271-40fd-b517-89b8794c0d5c">
+<h3>Adds a button to zero all EVs when editing a Pokemon</h3>
+<ul>
+<li><strong>Default:</strong> <code>disabled</code></li>
+</ul>
+<p>Some Nuzlocke rulesets restrict or forbid the use of Effort Values (EVs) to increase the challenge. Enabling this feature adds a &quot;Zero EVs&quot; button.</p>
+<p>This button appears at the bottom of the <code>Stats</code> tab when editing a Pokémon. Clicking it will set all EV values for that Pokémon to 0.</p>
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/b604e2cb-195c-413b-b92d-d809d73993ce">
+<img width="337" alt="image" src="https://github.com/user-attachments/assets/7f417f22-e3ce-4a93-a4d0-143fd5af1d89">
+<h3>Adds a button on the home page to give max rare candies</h3>
+<ul>
+<li><strong>Default:</strong> <code>enabled</code></li>
+</ul>
+<p>This feature adds a convenient button directly on the PKHeX.Web <a href="https://pkhex-web.github.io/">home page</a>. Clicking this button automatically locates the appropriate item pouch in your save file's bag and adds the maximum possible number of Rare Candies allowed by the game.</p>
+<img width="501" alt="image" src="https://github.com/user-attachments/assets/d18dcae2-2c0f-48d0-b25e-4a60fed7726c">
+<p>After clicking, a confirmation message will appear indicating the change was successful.</p>
+<img width="415" alt="image" src="https://github.com/user-attachments/assets/b31e9aa4-5619-41fc-8be2-329259373815">
+
+</article>
+
+
+<hr style="margin-bottom: 32px; margin-top: 16px" />
+<h2>Tags</h2>
+
+<a href="/blog/tags/pkhex">
+    <span class="ant-tag ant-tag-default">
+        pkhex
+    </span>
+</a>
+
+<a href="/blog/tags/tutorial">
+    <span class="ant-tag ant-tag-default">
+        tutorial
+    </span>
+</a>
+
+<a href="/blog/tags/plugins">
+    <span class="ant-tag ant-tag-default">
+        plugins
+    </span>
+</a>
+
+<a href="/blog/tags/nuzlocke">
+    <span class="ant-tag ant-tag-default">
+        nuzlocke
+    </span>
+</a>
+
+
+            </div>
+        </main>
+
+        <footer class="ant-layout-footer" style="text-align: center;"
+        >
+            <p>PKHeX.Web - edit pokemon save files.
+            </p>
+            <p>
+                Issues or feedback on <a href="https://github.com/arleypadua/PKHeX.Everywhere"
+                                         target="_blank">GitHub</a></p>
+
+            <div class="ant-space ant-space-horizontal ant-space-align-start" style=" flex-wrap: wrap;">
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical">
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/terms-of-use">Terms of Use</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/credits">Credits</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item">
+                    <a href="/release-notes?since=2025-05-01">Release Notes</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </section>
+    
+</section>
+
+</body>
+</html>
