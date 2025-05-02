@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Introducing PKHeX.Everywhere: A Web-Based Pokémon Save Editor | PKHeX.Web - Blog</title>
+
+    <link href="https://pkhex-web.github.io/_content/AntDesign/css/ant-design-blazor.dark.css" rel="stylesheet">
+    <link href="/blog/css/style.css" rel="stylesheet">
+</head>
+<body>
+<section class="ant-layout ant-layout-has-sider" style="min-height: 100vh;">
+    <aside class="ant-layout-sider ant-layout-sider-dark ant-layout-sider-has-trigger ant-layout-sider-collapsed"
+           style="flex: 0 0 64px; max-width: 64px; min-width: 64px; width: 64px; overflow:initial; ">
+
+        <div class="ant-layout-sider-children">
+            <div class="logo">
+                <a class="logo-link" href="/">PKHeX.Web</a>
+            </div>
+        </div>
+    </aside>
+
+    <section class="ant-layout">
+        <header class="ant-layout-header ant-header"
+                style="display: flex; justify-items: center; align-items: center; width: 100%;">
+        </header>
+        <main class="ant-layout-content blog-main-layout" style=" margin: 24px 16px 0;">
+            <div class="site-layout-background blog-main-content" style="padding: 24px; min-height: 360px">
+                
+<nav style="padding-bottom: 16px;">
+    <a href="/blog/">Home</a>
+    
+    <span> / </span>
+    <a href="/blog/posts/introducing-pk-hex-everywhere/">introducing_pk_hex_everywhere</a>
+    
+</nav>
+
+<article>
+    <h1>Introducing PKHeX.Everywhere: A Web-Based Pokémon Save Editor</h1>
+    <p><small>May 02, 2025</small></p>
+    <p>This post introduces a project I've been developing called PKHeX.Everywhere. The source code and issue tracking can be found on GitHub: <a href="https://github.com/arleypadua/PKHeX.Everywhere">https://github.com/arleypadua/PKHeX.Everywhere</a>.</p>
+<p><strong>Origins: A Cross-Platform Terminal Editor</strong></p>
+<p>The project originated from my use of PKHeX, the well-regarded Pokémon save editing tool created by Kurt (<a href="https://github.com/kwsch">kwsch</a>). My initial goal for PKHeX.Everywhere was to build a version that could run in a terminal, aiming for cross-platform compatibility (Windows, macOS, Linux) without requiring a graphical user interface. This involved exploring techniques like Aspect-Oriented Programming (AOP) to adapt the original codebase for a terminal environment.</p>
+<p><strong>Evolution: Moving to the Web</strong></p>
+<p>As development progressed, the idea shifted towards broader accessibility. The project evolved into a web application, aiming to make save editing possible on any device with a modern web browser.</p>
+<p>Using Blazor and WebAssembly (.NET), PKHeX.Everywhere ports the core functionality of PKHeX to run client-side in the browser. This allows users to edit save files on desktops or mobile devices through a responsive web interface, without needing separate installations for each platform.</p>
+<p><strong>Core Features</strong></p>
+<p>PKHeX.Everywhere is extensible with builtin plug-ins:</p>
+<ol>
+<li><strong>Nuzlocke:</strong> It includes functionalities like helpers aimed at Nuzlocke players.</li>
+<li><strong>Integrated Emulator:</strong> An embedded emulator is included, which can read the save file state after an in-game save, potentially streamlining the play-edit cycle.</li>
+<li><strong>Auto Legality Mode:</strong> It incorporates PKHeX's legality checking logic, alongside <a href="https://github.com/santacrab2">santacrab2</a>'s fork of Auto-Legality Mode. Which is updated at least once a month.</li>
+</ol>
+<p><strong>The Development Process: Learning and Project Management</strong></p>
+<p>Developing PKHeX.Everywhere has been a useful learning experience. It provided a practical context for working more deeply with Blazor and WebAssembly, understanding how to integrate a substantial .NET library like PKHeX into a web environment. Managing it as an open-source project has also offered insights into that process. Overall, it's been a nice ride exploring these technologies.</p>
+<p><strong>Open Source and Contributions</strong></p>
+<p>PKHeX.Everywhere is intended as a tool for the Pokémon community, building upon the foundation laid by the original PKHeX.</p>
+<p>The project is open source (<a href="https://github.com/arleypadua/PKHeX.Everywhere">https://github.com/arleypadua/PKHeX.Everywhere</a>). Contributions are welcome, whether through feedback, feature suggestions, issue reporting, or proposing changes via forks and pull requests.</p>
+<p><strong>Next Steps</strong></p>
+<p>Development is ongoing. Future work involves refining the existing features, adding new ones, and maintaining compatibility with updates from the core PKHeX project. Feedback and contributions will help guide its direction.</p>
+<p>You can explore the repository to see the code or build it yourself.</p>
+
+</article>
+
+
+<hr style="margin-bottom: 32px; margin-top: 16px" />
+<h2>Tags</h2>
+
+<a href="/blog/tags/project">
+    <span class="ant-tag ant-tag-default">
+        project
+    </span>
+</a>
+
+<a href="/blog/tags/pokemon">
+    <span class="ant-tag ant-tag-default">
+        pokemon
+    </span>
+</a>
+
+<a href="/blog/tags/pkhex">
+    <span class="ant-tag ant-tag-default">
+        pkhex
+    </span>
+</a>
+
+<a href="/blog/tags/blazor">
+    <span class="ant-tag ant-tag-default">
+        blazor
+    </span>
+</a>
+
+<a href="/blog/tags/webassembly">
+    <span class="ant-tag ant-tag-default">
+        webassembly
+    </span>
+</a>
+
+<a href="/blog/tags/open_source">
+    <span class="ant-tag ant-tag-default">
+        open_source
+    </span>
+</a>
+
+
+            </div>
+        </main>
+
+        <footer class="ant-layout-footer" style="text-align: center;"
+        >
+            <p>PKHeX.Web - edit pokemon save files.
+            </p>
+            <p>
+                Issues or feedback on <a href="https://github.com/arleypadua/PKHeX.Everywhere"
+                                         target="_blank">GitHub</a></p>
+
+            <div class="ant-space ant-space-horizontal ant-space-align-start" style=" flex-wrap: wrap;">
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical">
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/terms-of-use">Terms of Use</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/credits">Credits</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item">
+                    <a href="/release-notes?since=2025-05-01">Release Notes</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </section>
+    
+</section>
+
+</body>
+</html>
