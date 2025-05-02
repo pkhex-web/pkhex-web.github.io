@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Developing Plugins for PKHeX.Web - SDK Guide | PKHeX.Web - Blog</title>
+
+    <link rel="canonical" href="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-sdk-guide/">
+
+    <meta name="description" content="">
+    <meta property="og:title" content="Developing Plugins for PKHeX.Web - SDK Guide">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://pkhex-web.github.io/blog/posts/pkhex-web-plugin-sdk-guide/">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+
+    <link href="https://pkhex-web.github.io/_content/AntDesign/css/ant-design-blazor.dark.css" rel="stylesheet">
+    <link href="/blog/css/style.css" rel="stylesheet">
+</head>
+<body>
+<section class="ant-layout ant-layout-has-sider" style="min-height: 100vh;">
+    <aside class="ant-layout-sider ant-layout-sider-dark ant-layout-sider-has-trigger ant-layout-sider-collapsed"
+           style="flex: 0 0 64px; max-width: 64px; min-width: 64px; width: 64px; overflow:initial; ">
+
+        <div class="ant-layout-sider-children">
+            <div class="logo">
+                <a class="logo-link" href="/">PKHeX.Web</a>
+            </div>
+        </div>
+    </aside>
+
+    <section class="ant-layout">
+        <header class="ant-layout-header ant-header"
+                style="display: flex; justify-items: center; align-items: center; width: 100%;">
+        </header>
+        <main class="ant-layout-content blog-main-layout" style=" margin: 24px 16px 0;">
+            <div class="site-layout-background blog-main-content" style="padding: 24px; min-height: 360px">
+                
+<nav style="padding-bottom: 16px;">
+    <a href="/blog/">Home</a>
+    
+    <span> / </span>
+    <a href="/blog/posts/pkhex-web-plugin-sdk-guide/">developing_plugins</a>
+    
+</nav>
+
+<article>
+    <h1>Developing Plugins for PKHeX.Web - SDK Guide</h1>
+    <p><small>September 03, 2024</small></p>
+    <p>This guide provides information for developers interested in extending PKHeX.Web by creating their own plugins using the official SDK.</p>
+<h2>What is the Plug-in SDK?</h2>
+<p>The PKHeX.Web Plug-in SDK is a .NET package that provides the necessary tools, interfaces, and base classes to develop custom plug-ins that integrate with the PKHeX.Web application.</p>
+<h2>Pre-requisites</h2>
+<p>Before you start, ensure you have the following installed:</p>
+<ul>
+<li><a href="https://dotnet.microsoft.com/en-us/download">.NET 8 SDK or later</a></li>
+<li><a href="https://code.visualstudio.com/Download">Visual Studio Code</a> (or another preferred IDE/editor for .NET development)</li>
+</ul>
+<h2>Getting started</h2>
+<p>Follow these steps to create a basic plug-in project.</p>
+<ol>
+<li>
+<p><strong>Create a .NET project</strong></p>
+<p>Open your terminal or command prompt:</p>
+<pre><code class="language-sh"># create a folder for your plugin
+mkdir PlugIn.Demo
+
+# change the directory
+cd PlugIn.Demo
+
+# create a razor class lib
+# (can also be a classlib if your plug-in doesn't need to render UI components)
+dotnet new razorclasslib
+
+# open VS Code (optional)
+code .
+</code></pre>
+</li>
+<li>
+<p><strong>Configure your project file</strong></p>
+<p>Edit your project file (<code>.csproj</code> file, e.g., <code>./PlugIn.Demo.csproj</code> in this demo) and add the following properties within the <code>&lt;PropertyGroup&gt;</code> section:</p>
+<pre><code class="language-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk.Razor&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;!-- Default properties like TargetFramework --&gt;
+    &lt;TargetFramework&gt;net8.0&lt;/TargetFramework&gt; &lt;!-- Or your target version --&gt;
+    &lt;Nullable&gt;enable&lt;/Nullable&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+
+    &lt;!-- Add the following lines --&gt;
+    &lt;DebugType&gt;portable&lt;/DebugType&gt;
+    &lt;EmbedAllSources&gt;true&lt;/EmbedAllSources&gt;
+    &lt;PublishSingleFile&gt;true&lt;/PublishSingleFile&gt;
+    &lt;Version&gt;1.0.0&lt;/Version&gt;
+    &lt;!-- Until here --&gt;
+
+  &lt;/PropertyGroup&gt;
+
+  &lt;!-- Other items like PackageReference might be here --&gt;
+
+&lt;/Project&gt;
+</code></pre>
+<p><em>(Ensure you keep existing relevant properties like <code>&lt;TargetFramework&gt;</code>)</em>. These settings help ensure the plugin is packaged correctly for PKHeX.Web.</p>
+</li>
+<li>
+<p><strong>Add the SDK package to your project</strong></p>
+<p>Add the PKHeX.Web Plugins SDK NuGet package. You can find the latest version on <a href="https://www.nuget.org/packages/PKHeX.Web.Plugins">NuGet</a>.</p>
+<pre><code class="language-sh">dotnet add package PKHeX.Web.Plugins
+</code></pre>
+<p>A successful command will output logs similar to this:</p>
+<pre><code>  Determining projects to restore...
+info : Adding PackageReference for package 'PKHeX.Web.Plugins' into project '...'.
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pkhex.web.plugins/index.json
+
+... sequence omitted
+
+info : PackageReference for package 'PKHeX.Web.Plugins' version 'X.Y.Z' added to file './PlugIn.Demo.csproj'.
+info : Writing assets file to disk. Path: .../obj/project.assets.json
+log  : Restored .../PlugIn.Demo.csproj (in X.YZ sec).
+</code></pre>
+</li>
+<li>
+<p><strong>Add your plug-in manifest class</strong></p>
+<p>Create a new C# class file (e.g., <code>PlugInDemo.cs</code>). This class must inherit from the abstract <code>Settings</code> class provided by the SDK. This class defines metadata, configuration options, and default feature states for your plugin.</p>
+<pre><code class="language-csharp">using PKHeX.Web.Plugins;
+using PKHeX.Web.Plugins.Common; // Required for SettingValue
+
+namespace PlugIn.Demo; // Use your project's namespace
+
+public class PlugInDemo : Settings
+{
+    // Constructor calling the base class with the Manifest
+    public PlugInDemo() : base(Manifest)
+    {
+       // Optionally define settings that users can configure.
+       // Keys are strings, values use specific SettingValue types.
+       // this[&quot;Some boolean setting&quot;] = new SettingValue.BooleanValue(true);
+       // this[&quot;Some integer setting&quot;] = new SettingValue.IntegerValue(1);
+       // this[&quot;Some string setting&quot;] = new SettingValue.StringValue(&quot;a default value&quot;);
+       // this[&quot;Some file setting&quot;] = new SettingValue.FileValue([], string.Empty); // For file uploads
+
+       // Optionally define which features (hooks) are enabled by default.
+       // If none are specified here, all features start disabled.
+       // EnabledByDefault&lt;DemoAction&gt;();
+    }
+
+    // Static manifest defining plugin metadata
+    private static readonly PlugInManifest Manifest = new PlugInManifest(
+        PlugInName: &quot;Demo Plug-In&quot;,
+        Description: &quot;A simple demonstration plug-in.&quot;);
+        // Optional parameters: ProjectUrl, Information
+}
+</code></pre>
+<p>See the <a href="#settings">Settings</a> section below for more details.</p>
+</li>
+<li>
+<p><strong>Add a feature (Hook Implementation)</strong></p>
+<p>Create classes that implement one or more &quot;hook&quot; interfaces provided by the SDK. These hooks allow your code to execute at specific points within PKHeX.Web or add UI elements.</p>
+<p>For this example, we'll implement <code>IPokemonEditAction</code> to add a button to the Pokémon editor:</p>
+<pre><code class="language-csharp">using PKHeX.Core; // Required for Pokemon type
+using PKHeX.Web.Plugins;
+using PKHeX.Web.Plugins.Common; // Required for Outcome
+using System.Threading.Tasks; // Required for Task
+
+namespace PlugIn.Demo; // Use your project's namespace
+
+public class DemoAction : IPokemonEditAction // Implement the desired hook interface
+{
+    // Text displayed on the button
+    public string Label =&gt; &quot;Demo Action&quot;;
+
+    // Description shown on hover or in settings
+    public string Description =&gt; &quot;Demo action available when editing a pokemon&quot;;
+
+    // Method executed when the button is clicked
+    public Task&lt;Outcome&gt; OnActionRequested(Pokemon pokemon)
+    {
+        // Example: Show an info notification
+        return Outcome.Notify(
+            message: &quot;Action executed&quot;,
+            description: $&quot;Action executed for pokemon: {pokemon.Species.Name}&quot;,
+            type: Outcome.Notification.NotificationType.Info).Completed();
+
+        // Other outcomes like Outcome.Void or Outcome.Page are possible
+    }
+}
+</code></pre>
+<p>Check the <a href="#plug-in-hooks">Plug-In Hooks</a> section for more available hooks.</p>
+</li>
+<li>
+<p><strong>Publishing the package</strong></p>
+<p>Once your code is complete, build your project in <code>Release</code> configuration:</p>
+<pre><code class="language-sh">dotnet publish -c Release
+</code></pre>
+<p>This will typically generate a single <code>.dll</code> file in a path like <code>bin/Release/net8.0/publish/</code>. This DLL is your packaged plug-in.</p>
+<p>Currently, there isn't an automated marketplace for publishing. To make your plug-in available to other users via the default PKHeX.Web sources, please <a href="https://github.com/arleypadua/PKHeX.Everywhere/issues/new">open an issue</a> in the main repository including:</p>
+<ul>
+<li>A description of the plug-in and its functionality.</li>
+<li>A link to the plug-in's code repository (e.g., GitHub).</li>
+</ul>
+</li>
+</ol>
+
+</article>
+
+
+<hr style="margin-bottom: 32px; margin-top: 16px" />
+<h2>Tags</h2>
+
+<a href="/blog/tags/pkhex">
+    <span class="ant-tag ant-tag-default">
+        pkhex
+    </span>
+</a>
+
+<a href="/blog/tags/sdk">
+    <span class="ant-tag ant-tag-default">
+        sdk
+    </span>
+</a>
+
+<a href="/blog/tags/plugins">
+    <span class="ant-tag ant-tag-default">
+        plugins
+    </span>
+</a>
+
+<a href="/blog/tags/development">
+    <span class="ant-tag ant-tag-default">
+        development
+    </span>
+</a>
+
+<a href="/blog/tags/tutorial">
+    <span class="ant-tag ant-tag-default">
+        tutorial
+    </span>
+</a>
+
+
+            </div>
+        </main>
+
+        <footer class="ant-layout-footer" style="text-align: center;"
+        >
+            <p>PKHeX.Web - edit pokemon save files.
+            </p>
+            <p>
+                Issues or feedback on <a href="https://github.com/arleypadua/PKHeX.Everywhere"
+                                         target="_blank">GitHub</a></p>
+
+            <div class="ant-space ant-space-horizontal ant-space-align-start" style=" flex-wrap: wrap;">
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical">
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/terms-of-use">Terms of Use</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item" style=" margin-right:4px;">
+                    <a href="/credits">Credits</a>
+                </div>
+                <span class="ant-space-item-split" style="margin-right: 4px;">
+            <span class="ant-divider ant-divider-vertical"
+            >
+    </span>
+        </span>
+
+                <div class="ant-space-item">
+                    <a href="/release-notes?since=2025-05-01">Release Notes</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </section>
+    
+</section>
+
+</body>
+</html>
