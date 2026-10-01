@@ -1,0 +1,1 @@
+var e=()=>({"@media (prefers-reduced-motion: reduce)":{"&, &::before, &::after":{transition:`none`,animation:`none`}}}),t=()=>({"@media (prefers-reduced-motion: reduce)":{transition:`none`,animation:`none`}});export{e as n,t};
