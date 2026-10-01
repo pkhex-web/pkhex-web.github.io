@@ -1,0 +1,1 @@
+var e=`PKHeX.Web`,t=`https://github.com/arleypadua/PKHeX.Everywhere/issues`;export{t as n,e as t};
