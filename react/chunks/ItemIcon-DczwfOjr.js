@@ -1,0 +1,1 @@
+import{s as e}from"./src-LHV3o7Ir.js";var t=e(),n=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items`,r=/^T[MR]\d+$/,i=e=>r.test(e)?`tm-normal`:e.toLowerCase().replaceAll(`é`,`e`).split(` `).join(`-`);function a({name:e}){return e?(0,t.jsx)(`img`,{alt:e,src:`${n}/${i(e)}.png`,style:{width:30}}):null}export{a as t};
