@@ -1,0 +1,1 @@
+var e={pokemon:({at:e,id:t})=>`/pokemon/${e.source}/${t}`,box:`/pokemon-box`,plugIns:`/plugins`,plugIn:e=>`/plugins/${e}`,searchEncounter:`/pokemon/search-encounter`,clonePokemon:({at:e,id:t})=>`/pokemon/${e.source}/${t}/clone`,encounters:({version:e,species:t})=>`/pokemon/search-encounter?${new URLSearchParams({version:String(e),...t&&{species:String(t)}})}`};export{e as t};
