@@ -1,0 +1,1 @@
+import{i as e,t}from"./react-DB-4Zxce.js";var n=e(t(),1),r=(0,n.createContext)(null),i=r;function a(){let e=(0,n.useContext)(r);if(!e)throw Error(`usePlugIns must be used inside a PlugInsProvider.`);return e}export{a as n,i as t};
