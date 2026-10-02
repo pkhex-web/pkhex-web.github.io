@@ -1,0 +1,1 @@
+import{t as e}from"./react-DB-4Zxce.js";import{n as t}from"./color-Ci9RnG_x.js";e();var n=(e,n)=>{let{r,g:i,b:a,a:o}=e.toRgb(),s=new t(e.toRgbString()).onBackground(n).toHsv();return o<=.5?s.v>.5:r*.299+i*.587+a*.114>192};export{n as t};
