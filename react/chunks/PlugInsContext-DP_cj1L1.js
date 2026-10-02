@@ -1,0 +1,1 @@
+import{i as e}from"./rolldown-runtime-Dd_uD5pT.js";import{t}from"./react-CQOZoUwg.js";var n=e(t(),1),r=(0,n.createContext)(null),i=r;function a(){let e=(0,n.useContext)(r);if(!e)throw Error(`usePlugIns must be used inside a PlugInsProvider.`);return e}export{a as n,i as t};
