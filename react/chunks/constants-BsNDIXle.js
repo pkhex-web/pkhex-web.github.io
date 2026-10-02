@@ -1,0 +1,1 @@
+var e=`PKHeX.Web`,t=`https://github.com/arleypadua/PKHeX.Everywhere`,n=`${t}/issues`,r=`ca-pub-9295410730226031`;export{n as i,e as n,t as r,r as t};
