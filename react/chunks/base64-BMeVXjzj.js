@@ -1,1 +1,0 @@
-function e(e){let t=``;for(let n of e)t+=String.fromCharCode(n);return btoa(t)}function t(e){return Uint8Array.from(atob(e),e=>e.charCodeAt(0))}export{e as n,t};

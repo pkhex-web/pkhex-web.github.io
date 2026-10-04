@@ -1,1 +1,0 @@
-import{E as e}from"./context-EH5WZIp6.js";function t(e){return[`small`,`middle`,`medium`,`large`].includes(e)}function n(t){return t?e(t):!1}export{n,t};

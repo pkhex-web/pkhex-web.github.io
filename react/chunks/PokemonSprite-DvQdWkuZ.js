@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-McVdwca2.js";var t=e(),n=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons`,r={alola:`-alola`,galar:`-galar`};function i({pokemon:e}){let i=r[e.form?.name.toLowerCase()??``]??``;return(0,t.jsx)(`img`,{alt:e.species,src:`${n}/${e.speciesId}${i}.png`})}export{i as t};

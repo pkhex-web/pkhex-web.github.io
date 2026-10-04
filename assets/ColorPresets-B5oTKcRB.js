@@ -1,1 +1,0 @@
-import{t as e}from"./react-B7JSOICP.js";import{d as t}from"./tooltip-CZYsTSaf.js";e();var n=(e,n)=>{let{r,g:i,b:a,a:o}=e.toRgb(),s=new t(e.toRgbString()).onBackground(n).toHsv();return o<=.5?s.v>.5:r*.299+i*.587+a*.114>192};export{n as t};
